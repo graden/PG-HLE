@@ -1,0 +1,14 @@
+{
+    "server": {
+        "port": 8085
+    },
+    "session": {
+        "secret": "pharaon",
+        "key": "sid",
+        "cookie": {
+            "path": "/",
+            "httpOnly": true,
+            "maxAge": 3600000
+        }
+    }
+}
