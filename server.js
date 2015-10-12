@@ -3,11 +3,11 @@ var cookieParser  = require('cookie-parser');
 var favicon       = require('serve-favicon');
 var bodyParser    = require('body-parser');
 var url           = require('url');
-var config        = require('./config');
+var config        = require('config');
 var session       = require('express-session');
 var ejsTemplate   = require('ejs-locals');
 
-var port = config.get('server:port');
+var port = config.get('server.port');
 var app = express();
 
 
@@ -17,9 +17,9 @@ app.use(bodyParser.json());
 
 app.use(cookieParser());
 app.use(session({
-    secret: config.get('session:secret'),
-    key: config.get('session:key'),
-    cookie: config.get('session:cookie'),
+    secret: config.get('session.secret'),
+    key: config.get('session.key'),
+    cookie: config.get('session.cookie'),
     proxy: true,
     resave: true,
     saveUninitialized: true

@@ -1,8 +1,8 @@
-var pgCon = require('./dbConnect');
+var pgCon = require('../middleware/dbConnect');
 
 exports.startPage = function(req, res) {
 
-    pgCon.query('SELECT * FROM "dsGroups"', function(errGroups, resGroups)
+    pgCon.query('SELECT * FROM "dsGroups" WHERE "dsGroups"."idGroups"=1', function(errGroups, resGroups)
     {
         if (errGroups) {
             console.error('Error = ', errGroups);
